@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog of the Day</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffcccb;
+            color: #000;
+        }
+        .dog-image {
+            width: 100%;
+            height: auto;
+        }
+        .hidden-text {
+            color: #ffcccb;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Dog of the Day</h1>
+        <img :src="dogImage" alt="Dog of the Day" class="dog-image">
+        <p class="hidden-text">This text is invisible to users.</p>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    dogImage: 'https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg'
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>
